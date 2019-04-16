@@ -20,7 +20,7 @@
 
     <groupId>prasad.springframework</groupId>
     <artifactId>sfw-pet-clinic</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <name>sfw-pet-clinic</name>
     <description>SFW Pet Clinic Project</description>
 
@@ -68,7 +68,7 @@
         <developerConnection>
             scm:git:https://github.com/hemprasadk/sfw-pet-clinic.git
         </developerConnection>
-        <tag>sfw-pet-clinic-0.0.3</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
