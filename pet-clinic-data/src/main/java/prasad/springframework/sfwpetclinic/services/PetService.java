@@ -4,9 +4,6 @@ import prasad.springframework.sfwpetclinic.model.Pet;
 
 import java.util.Set;
 
-public interface PetService {
+public interface PetService extends CurdService<Pet,Long> {
 
-    Pet finById(Long id);
-    Pet save(Pet pet);
-    Set<Pet> finall();
 }
