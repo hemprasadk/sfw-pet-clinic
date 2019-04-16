@@ -1,14 +1,17 @@
 package prasad.springframework.sfwpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import prasad.springframework.sfwpetclinic.model.Vet;
 import prasad.springframework.sfwpetclinic.services.CurdService;
 import prasad.springframework.sfwpetclinic.model.Vet;
 import prasad.springframework.sfwpetclinic.services.CurdService;
+import prasad.springframework.sfwpetclinic.services.VetService;
 import prasad.springframework.sfwpetclinic.services.map.AbstractMapService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CurdService<Vet,Long> {
+@Service
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
