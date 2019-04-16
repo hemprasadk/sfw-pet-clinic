@@ -1,0 +1,12 @@
+package prasad.springframework.sfwpetclinic.services;
+
+import prasad.springframework.sfwpetclinic.model.Owner;
+
+import java.util.Set;
+
+public interface OwnerService {
+    Owner findByLastname(String lastname);
+    Owner finById(Long id);
+    Owner save(Owner owner);
+    Set<Owner> finall();
+}
