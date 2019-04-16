@@ -1,6 +1,11 @@
 package prasad.springframework.sfwpetclinic.model;
 
-public class Person {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Person extends BaseEntitiy{
 
     private String Firstname;
 

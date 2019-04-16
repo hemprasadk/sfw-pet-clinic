@@ -1,4 +1,4 @@
 package prasad.springframework.sfwpetclinic.model;
 
-public class PetType {
+public class PetType extends BaseEntitiy {
 }

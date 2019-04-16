@@ -2,7 +2,7 @@ package prasad.springframework.sfwpetclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends BaseEntitiy {
     private PetType petType;
 
     public PetType getPetType() {
