@@ -8,7 +8,7 @@ import prasad.springframework.sfwpetclinic.services.PetTypeService;
 import java.util.Set;
 
 @Service
-public class PetTypeServiceServiceMap extends AbstractMapService<PetType, Long>  implements PetTypeService {
+public class PetTypeServiceSMap extends AbstractMapService<PetType, Long>  implements PetTypeService {
 
 
     @Override

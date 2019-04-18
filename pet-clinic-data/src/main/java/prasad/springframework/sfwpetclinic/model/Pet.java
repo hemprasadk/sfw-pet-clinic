@@ -3,7 +3,20 @@ package prasad.springframework.sfwpetclinic.model;
 import java.time.LocalDate;
 
 public class Pet extends BaseEntitiy {
-    private PetType petType;
+    private PetType petType ;
+    private String name;
+    private Owner owner;
+    private LocalDate birthDate;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 
     public PetType getPetType() {
         return petType;
@@ -29,7 +42,6 @@ public class Pet extends BaseEntitiy {
         this.birthDate = birthDate;
     }
 
-    private Owner owner;
-    private LocalDate birthDate;
+
 }
 
