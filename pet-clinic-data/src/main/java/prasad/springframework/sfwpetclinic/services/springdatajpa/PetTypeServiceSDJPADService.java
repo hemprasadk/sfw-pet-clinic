@@ -1,5 +1,7 @@
 package prasad.springframework.sfwpetclinic.services.springdatajpa;
 
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import prasad.springframework.sfwpetclinic.model.Pet;
 import prasad.springframework.sfwpetclinic.model.PetType;
 import prasad.springframework.sfwpetclinic.repository.PetTypeRepository;
@@ -8,7 +10,8 @@ import prasad.springframework.sfwpetclinic.services.PetTypeService;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Service
+@Profile("springdatajpa")
 public class PetTypeServiceSDJPADService implements PetTypeService {
 
     public PetTypeServiceSDJPADService(PetTypeRepository petTypeRepository) {
