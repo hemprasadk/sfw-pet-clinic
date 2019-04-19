@@ -2,9 +2,14 @@ package prasad.springframework.sfwpetclinic.model;
 
 import sun.rmi.server.LoaderHandler;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "vistis")
 public class Visit extends BaseEntitiy{
+
+    @Column(name = "date")
     private LocalDate date;
 
     public LocalDate getDate() {
@@ -31,6 +36,10 @@ public class Visit extends BaseEntitiy{
         this.pet = pet;
     }
 
+    @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
     private Pet pet;
 }

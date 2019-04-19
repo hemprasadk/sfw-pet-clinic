@@ -1,29 +1,32 @@
 package prasad.springframework.sfwpetclinic.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-
+@MappedSuperclass
 public class Person extends BaseEntitiy{
 
-    private String Firstname;
+    @Column(name="firstname")
+    private String firstname;
 
     public String getFirstname() {
-        return Firstname;
+        return firstname;
     }
 
     public void setFirstname(String firstname) {
-        Firstname = firstname;
+        this.firstname = firstname;
     }
 
     public String getLastname() {
-        return Lastname;
+        return lastname;
     }
 
     public void setLastname(String lastname) {
-        Lastname = lastname;
+        this.lastname = lastname;
     }
 
-    private String Lastname;
+    @Column(name="lastname")
+    private String lastname;
+
+
+
 }
