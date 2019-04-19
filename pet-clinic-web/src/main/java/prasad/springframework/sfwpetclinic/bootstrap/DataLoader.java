@@ -4,25 +4,25 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import prasad.springframework.sfwpetclinic.model.*;
 import prasad.springframework.sfwpetclinic.services.*;
-import prasad.springframework.sfwpetclinic.services.map.OwnerServiceMap;
-import prasad.springframework.sfwpetclinic.services.map.VetServiceMap;
 
 import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService =specialityService;
+        this.visitService = visitService;
     }
 
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private  final SpecialityService specialityService;
+    private final VisitService visitService;
 
 
 
@@ -66,6 +66,7 @@ public class DataLoader implements CommandLineRunner {
         owner.setCity("Ajax");
         owner.setTelephone("154-258-3695");
 
+
         Pet mike = new Pet();
         mike.setPetType(saveddogPet);
         mike.setBirthDate(LocalDate.now());
@@ -87,6 +88,12 @@ public class DataLoader implements CommandLineRunner {
         tommy.setName("tommy");
         tommy.setOwner(owner1);
         owner1.getPet().add(tommy);
+        Visit catvisit = new Visit();
+        catvisit.setDate(LocalDate.now());
+        catvisit.setDescription("Sneez Cat");
+        catvisit.setPet(tommy);
+
+        visitService.save(catvisit);
 
 
         ownerService.save(owner);
