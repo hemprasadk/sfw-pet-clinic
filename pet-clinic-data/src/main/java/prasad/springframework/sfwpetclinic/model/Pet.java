@@ -1,11 +1,18 @@
 package prasad.springframework.sfwpetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Table(name="pets")
 public class Pet extends BaseEntitiy {
 
@@ -14,52 +21,12 @@ public class Pet extends BaseEntitiy {
     private PetType petType ;
     @Column(name="name")
     private String name;
-
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
-
     @Column(name="birthDate")
     private LocalDate birthDate;
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     Set<Visit> visitSet = new HashSet<>();
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-
-    public PetType getPetType() {
-        return petType;
-    }
-
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-
 }
 

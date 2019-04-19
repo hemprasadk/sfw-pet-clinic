@@ -1,12 +1,29 @@
 package prasad.springframework.sfwpetclinic.model;
 
+import com.sun.tracing.dtrace.ArgsAttributes;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Table(name = "owners")
 public class Owner extends  Person {
+
+    @Builder
+    public Owner(Long id, String firstname, String lastname, String address, String city, String telephone, Set<Pet> pet) {
+        super(id, firstname, lastname);
+        this.address = address;
+        this.city = city;
+        Telephone = telephone;
+        this.pet = pet;
+    }
 
     @Column(name="address")
     private String address;
@@ -14,43 +31,6 @@ public class Owner extends  Person {
     private String city;
     @Column(name="telephone")
     private String Telephone;
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pet =new HashSet<>();
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getTelephone() {
-        return Telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        Telephone = telephone;
-    }
-
-    public Set<Pet> getPet() {
-        return pet;
-    }
-
-    public void setPet(Set<Pet> pet) {
-        this.pet = pet;
-    }
-
-
-
-
-}
+   }
