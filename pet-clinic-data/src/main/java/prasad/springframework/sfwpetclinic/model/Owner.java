@@ -12,11 +12,9 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Table(name = "owners")
 public class Owner extends  Person {
 
-    @Builder
     public Owner(Long id, String firstname, String lastname, String address, String city, String telephone, Set<Pet> pet) {
         super(id, firstname, lastname);
         this.address = address;
